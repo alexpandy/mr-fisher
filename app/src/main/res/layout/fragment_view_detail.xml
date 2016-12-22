@@ -1,13 +1,186 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.naruku.narukunuorukadai.viewdetail.ViewDetailFragment">
+    tools:context="com.naruku.fisher.viewdetail.ViewDetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:id="@+id/vd_ivBanner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_people" />
+
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvQuantityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/vd_ivBanner"
+            android:layout_marginRight="@dimen/dp_30"
+            android:paddingTop="@dimen/dp_5"
+            android:text="@string/quantity"
+            android:textSize="@dimen/sp_20"
+            font:fontFace="Lato-Bold.ttf" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvRateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vd_ivBanner"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_5"
+            android:text="@string/amount"
+            android:textSize="@dimen/sp_20"
+            font:fontFace="Lato-Bold.ttf" />
+
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vd_tvRateTitle"
+            android:padding="@dimen/dp_5"
+            android:text="@string/rs"
+            android:textSize="@dimen/sp_20" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vd_tvRateTitle"
+            android:layout_toRightOf="@id/vd_tvRs"
+            android:padding="@dimen/dp_5"
+            android:text="300.00"
+            android:textSize="@dimen/sp_20" />
+
+        <me.himanshusoni.quantityview.QuantityView
+            android:id="@+id/quantityView_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/vd_tvQuantityTitle"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="@dimen/dp_5"
+            app:qv_addButtonBackground="@color/md_green_500"
+            app:qv_addButtonTextColor="@color/white"
+            app:qv_quantity="10"
+            app:qv_removeButtonBackground="@color/md_red_500"
+            app:qv_removeButtonTextColor="@color/white" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vd_tvRs"
+            android:padding="@dimen/dp_5"
+            android:text="@string/tuna_fish"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Sentinel-Bold.otf" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/vd_tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vd_tvTitle"
+            android:lineSpacingExtra="@dimen/dp_1"
+            android:padding="@dimen/dp_5"
+            android:text="@string/tuna_fish_desc"
+            font:fontFace="Lato-Bold.ttf" />
+
+        <RelativeLayout
+            android:id="@+id/make_payment_rlBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/vd_rlSwipeable_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:alpha=".3"
+                        android:background="@drawable/ic_line" />
+
+                    <ImageView
+                        android:id="@id/swipeable_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icn_slider_lightblue" />
+
+                    <ImageView
+                        android:id="@+id/decorator_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:adjustViewBounds="true"
+                        android:padding="5dp"
+                        android:src="@drawable/loading"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <com.naruku.fisher.fontui.FontTextView
+                    android:id="@+id/vd_tvSwipeToPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/slide_to_pay"
+                    android:textColor="@color/davyGrey"
+                    font:fontFace="Lato-Heavy.ttf" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_rotate"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/loading"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <!-- <com.naruku.narukunuorukadai.fontui.FontButton
+             android:id="@+id/vd_btnAdd_quantity"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/vd_tvDesc"
+             android:layout_marginLeft="40dp"
+             android:layout_marginRight="40dp"
+             android:layout_marginTop="@dimen/dp_5"
+             android:background="@color/colorPrimary"
+             android:text="@string/click_to_pay"
+             android:textColor="@color/white"
+             android:textSize="@dimen/sp_25"
+             font:fontFace="Sentinel-SemiboldItalic.otf" />-->
+
+
+    </RelativeLayout>
+</RelativeLayout>

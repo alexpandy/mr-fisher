@@ -31,5 +31,31 @@ public class ViewDetailActivity extends NavigationDrawerActivity  {
         return getString(R.string.fish_details);
     }
 
+/*   @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.feedback_menu, menu);
+        mFeedbackMenu = menu;
+        setMenuEnable(false);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    public void setMenuEnable(boolean status) {
+
+        mFeedbackMenu.findItem(R.id.menu_feedback_send).setEnabled(status);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.menu_feedback_send:
+                FeedbackFragment feedbackFragment = (FeedbackFragment) FeedbackActivity.this.getSupportFragmentManager().
+                        findFragmentByTag(FeedbackActivity.this.getString(R.string.frag_tag_feedback));
+                feedbackFragment.sendFeedback();
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 }

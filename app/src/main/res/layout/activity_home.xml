@@ -4,10 +4,15 @@
     android:id="@+id/activity_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.naruku.narukunuorukadai.homescreen.HomeActivity">
+    tools:context="com.naruku.fisher.homescreen.HomeActivity">
+
+
+    <fragment
+        android:name="com.naruku.fisher.homescreen.HomeFragment"
+        class="com.naruku.fisher.homescreen.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="@string/frag_tag_home"></fragment>
 
 </RelativeLayout>
+

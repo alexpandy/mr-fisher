@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/yellow_dark</item>
+        <item name="colorPrimaryDark">@color/yellow_dark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="ActionBarMaterialTheme" parent="AppTheme">
+        <!-- By default, Material's Toolbar does not have a theme of its own.
+        But, we can set those properties. These values, when assigned to v7
+        AppCompat's toolbar would override all the settings provided in the
+        theme -->
+        <item name="colorPrimary">@color/yellow_dark</item>
+        <item name="android:background">@color/yellow_dark</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="NavDrawerTextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="NavDrawerTextFooterAppearance">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="NavDrawerLeftMargin">
+        <item name="android:layout_marginLeft">30sp</item>
+    </style>
+
+    <style name="editTextTheme" parent="AppTheme">
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="colorControlActivated">@android:color/transparent</item>
+        <item name="colorControlHighlight">@color/blue_normal</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--NarukunuOruKadai-->
+    <style name="NarukunuOruKadai_white" parent="AppTheme">
+        <item name="android:icon">@mipmap/ic_launcher</item>
+        <item name="android:label">@string/app_name</item>
+        <item name="android:src">@drawable/ic_logo</item>
+    </style>
+
+</resources>
