@@ -1,13 +1,157 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.naruku.fisher.cart.CartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/cart_rlDelivery"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvDeliveryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/rippleGrey"
+            android:padding="@dimen/dp_10"
+            android:text="@string/your_delivery_details"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Sentinel-Bold.otf" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvCustName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_tvDeliveryTitle"
+            android:padding="@dimen/dp_5"
+            android:text="Alex Pandy"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Lato-Bold.ttf" />
+
+        <View
+            android:id="@+id/cart_vCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/cart_tvCustName"
+            android:background="@color/grey_transparency" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvPhoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_vCustomer"
+            android:inputType="phone"
+            android:padding="@dimen/dp_5"
+            android:text="9884908790"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Lato-Bold.ttf" />
+
+        <View
+            android:id="@+id/cart_vPhone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/cart_tvPhoneNo"
+            android:background="@color/grey_transparency" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvDeliveryAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_vPhone"
+            android:padding="@dimen/dp_5"
+            android:text="19, kannaki street, kamarajapuram, velachery, chennai-600042"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Lato-Bold.ttf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cart_rlCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_rlDelivery">
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvCartTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/rippleGrey"
+            android:padding="@dimen/dp_10"
+            android:text="@string/cart_caps"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Sentinel-Bold.otf" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/cart_rlCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_grey"
+        android:padding="@dimen/dp_5"
+        android:text="@string/check_out"
+
+        android:textColor="@color/white">
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:text="@string/check_out"
+            android:textColor="@color/yellow_dark"
+            android:textSize="@dimen/sp_18"
+            font:fontFace="Lato-Bold.ttf" />
+
+        <ImageView
+            android:id="@+id/cart_ivCheckOut"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/dp_10"
+            android:src="@drawable/money_bag" />
+
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvSubTotalRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow_dark"
+
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/cart_ivCheckOut"
+            android:padding="@dimen/dp_2"
+            android:text="3000.00"
+
+            android:textSize="@dimen/sp_20"
+            font:fontFace="Lato-Black.ttf" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvSubTotalRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/yellow_dark"
+
+            android:layout_toLeftOf="@id/cart_tvSubTotalRate"
+            android:text="@string/rs"
+            android:textSize="@dimen/sp_20"
+            font:fontFace="Lato-Black.ttf" />
+
+    </RelativeLayout>
+
+        <ListView
+            android:id="@+id/cart_list_lvDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_tvCartTitle"
+            android:layout_above="@id/cart_rlCheckout"
+            android:paddingLeft="10dp"></ListView>
+</RelativeLayout>
+</RelativeLayout>

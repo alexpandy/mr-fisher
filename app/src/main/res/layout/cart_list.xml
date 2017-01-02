@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_llContentDesc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.naruku.fisher.fontui.FontTextView
+        android:id="@+id/cart_tvItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="Tuna Fish"
+        android:textSize="@dimen/sp_20"
+        font:fontFace="Lato-Medium.ttf" />
+
+    <com.naruku.fisher.fontui.FontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cart_tvItems"
+        android:paddingTop="@dimen/dp_10"
+        android:text="(per kg)"
+        android:textSize="@dimen/sp_18"
+        font:fontFace="Lato-Medium.ttf" />
+
+    <LinearLayout
+        android:id="@+id/cart_llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cart_tvItems"
+        android:orientation="horizontal">
+
+        <me.himanshusoni.quantityview.QuantityView
+            android:id="@+id/quantity_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_10"
+            app:qv_addButtonBackground="@color/grey_dark"
+            app:qv_addButtonTextColor="@color/anti_flash_white"
+            app:qv_quantity="10"
+            app:qv_removeButtonBackground="@color/grey_dark"
+            app:qv_removeButtonTextColor="@color/white" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:text="@string/multiply"
+            android:textSize="@dimen/sp_15"
+            font:fontFace="Sentinel-Light.otf" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/rs"
+            android:textSize="@dimen/sp_15" />
+
+        <com.naruku.fisher.fontui.FontTextView
+            android:id="@+id/cart_tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp_2"
+            android:text="300.00"
+            android:textSize="@dimen/sp_15" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <com.naruku.fisher.fontui.FontTextView
+                android:id="@+id/cart_tvTotalRs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rs"
+                android:textSize="@dimen/sp_20"
+                font:fontFace="Lato-Black.ttf" />
+
+            <com.naruku.fisher.fontui.FontTextView
+                android:id="@+id/cart_tvTotalRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_2"
+                android:text="3000.00"
+                android:textSize="@dimen/sp_20"
+                font:fontFace="Lato-Black.ttf" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

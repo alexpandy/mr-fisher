@@ -26,3 +26,6 @@ android {
     }
 }
 apply from: 'task_dep.gradle'
+dependencies {
+    compile 'com.android.support:support-v4:24.+'
+}

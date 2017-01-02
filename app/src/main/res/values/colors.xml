@@ -26,11 +26,18 @@
     <color name="lighter_gray">#ddd</color>
     <color name="pink">#FF0068</color>
     <color name="rippleGrey">#DFDFDF</color>
-    <color name="yellow_dark">#FED403</color>
+    <color name="yellow_dark">#F5C13A</color>
+    <color name="yellow">#FED403</color>
     <color name="album_title">#4c4c4c</color>
     <color name="black_overlay">#66000000</color>
     <color name="colorAccentTrans">#a0009688</color>
     <color name="colorBlackTrans">#a0000000</color>
     <color name="md_red_500">#F44336</color>
     <color name="md_green_500">#4CAF50</color>
+    <color name="light_white">#F1F1F1</color>
+    <color name="grey_transparency">#D8D8D8</color>
+    <color name="gree_dark">#4B6951</color>
+    <color name="red_medium">#F85238</color>
+    <color name="grey_dark">#49493D</color>
+    <color name="dark_grey">#49493D</color>
 </resources>

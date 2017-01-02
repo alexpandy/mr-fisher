@@ -52,7 +52,7 @@
     <style name="NarukunuOruKadai_white" parent="AppTheme">
         <item name="android:icon">@mipmap/ic_launcher</item>
         <item name="android:label">@string/app_name</item>
-        <item name="android:src">@drawable/ic_logo</item>
+        <item name="android:src">@drawable/fish_logo</item>
     </style>
 
 </resources>

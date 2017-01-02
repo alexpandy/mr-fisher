@@ -14,7 +14,7 @@
         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
         <activity
-            android:name="com.naruku.fisher.login.LoginActivity"
+            android:name=".login.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar.FullScreen">
             <intent-filter>
@@ -23,12 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.naruku.fisher.homescreen.HomeActivity" />
+        <activity android:name=".homescreen.HomeActivity" />
         <activity
-            android:name="com.naruku.fisher.viewdetail.ViewDetailActivity"
+            android:name=".viewdetail.ViewDetailActivity"
             android:label="@string/title_activity_view_detail"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".cart.CartActivity"></activity>
     </application>
 
 </manifest>

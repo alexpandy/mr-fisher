@@ -62,7 +62,7 @@
             android:textSize="@dimen/sp_20" />
 
         <me.himanshusoni.quantityview.QuantityView
-            android:id="@+id/quantityView_default"
+            android:id="@+id/quantity_selector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -70,9 +70,10 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="@dimen/dp_5"
             app:qv_addButtonBackground="@color/md_green_500"
-            app:qv_addButtonTextColor="@color/white"
+            app:qv_addButtonTextColor="@color/anti_flash_white"
             app:qv_quantity="10"
-            app:qv_removeButtonBackground="@color/md_red_500"
+            app:qv_quantityBackground="@color/md_green_500"
+            app:qv_removeButtonBackground="@color/md_green_500"
             app:qv_removeButtonTextColor="@color/white" />
 
         <com.naruku.fisher.fontui.FontTextView
@@ -130,17 +131,17 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/icn_slider_lightblue" />
+                        android:src="@drawable/fish_slide" />
 
-                    <ImageView
+                   <!-- <ImageView
                         android:id="@+id/decorator_view"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         android:adjustViewBounds="true"
                         android:padding="5dp"
-                        android:src="@drawable/loading"
-                        android:visibility="gone" />
+                        android:src="@drawable/dolphin_rotate"
+                        android:visibility="gone" />-->
 
                 </RelativeLayout>
 
@@ -163,7 +164,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/loading"
+                android:src="@drawable/dolphin_rotate"
                 android:visibility="gone" />
         </RelativeLayout>
 

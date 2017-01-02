@@ -1,5 +1,6 @@
 package com.naruku.fisher.viewdetail;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,11 +11,16 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.naruku.fisher.Logger;
 import com.naruku.fisher.R;
+import com.naruku.fisher.cart.CartActivity;
+
+import me.himanshusoni.quantityview.QuantityView;
 
 
-public class ViewDetailFragment extends Fragment {
+public class ViewDetailFragment extends Fragment implements QuantityView.OnQuantityChangeListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,6 +38,8 @@ public class ViewDetailFragment extends Fragment {
     private ImageView mImgLoader;
     private SwipeButton swipeButton;
     private boolean swiped = false;
+    private QuantityView quantitySelector;
+    protected int selectedQuantity;
 
     public ViewDetailFragment() {
         // Required empty public constructor
@@ -64,9 +72,11 @@ public class ViewDetailFragment extends Fragment {
         mSwipeToPaytv = (TextView) mViewDetail.findViewById(R.id.vd_tvSwipeToPay);
         mImgLoading = (ImageView) mViewDetail.findViewById(R.id.img_rotate);
         parentSwipeableView = (ViewGroup) mViewDetail.findViewById(R.id.vd_rlSwipeable_view);
-
+        quantitySelector = (QuantityView) mViewDetail.findViewById(R.id.quantity_selector);
         mImgThumb = (ImageView) mViewDetail.findViewById(R.id.swipeable_view);
-        mImgLoader = (ImageView) mViewDetail.findViewById(R.id.decorator_view);
+      //  mImgLoader = (ImageView) mViewDetail.findViewById(R.id.decorator_view);
+
+        quantitySelector.setOnQuantityChangeListener(this);
 
         return mViewDetail;
     }
@@ -75,11 +85,18 @@ public class ViewDetailFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         swipeToPay();
+
+        quantitySelector.setQuantityClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedQuantity = quantitySelector.getQuantity();
+            }
+        });
     }
 
     private void swipeToPay() {
 
-        mImgThumb.setImageResource(R.drawable.icn_slider_lightblue);
+        mImgThumb.setImageResource(R.drawable.fish_slide);
         mSwipeToPaytv.setTextColor(getResources().getColor(R.color.davyGrey));
         swipeButton = new SwipeButton(parentSwipeableView, io.victoralbertos.swipe_coordinator.SwipeDirection.LEFT_TO_RIGHT);
         swipeButton.setThreshold(0.9f);
@@ -92,13 +109,17 @@ public class ViewDetailFragment extends Fragment {
 
                     swiped = true;
 
-                    mImgLoader.setVisibility(View.VISIBLE);
+                 //   mImgLoader.setVisibility(View.VISIBLE);
                     mImgThumb.setVisibility(View.INVISIBLE);
                     mSwipeToPaytv.setVisibility(View.INVISIBLE);
                    /* Vibrator vib = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
                     vib.vibrate(50);*/
-                    rotate();
+                   // rotate();
+                    Intent cartIntent = new Intent(getActivity(), CartActivity.class);
+                    //  cartIntent.putExtra("", errDesc);
+                    startActivity(cartIntent);
+                    getActivity().finish();
                 } /*else {
                         swipeButton.doSwipeReset();
                         mImgThumb.setImageResource(R.drawable.icn_slider_lightblue);
@@ -106,7 +127,7 @@ public class ViewDetailFragment extends Fragment {
                     }
                 }*/ else {
                     swiped = false;
-                    mImgThumb.setImageResource(R.drawable.icn_slider_lightblue);
+                    mImgThumb.setImageResource(R.drawable.fish_slide);
                     mSwipeToPaytv.setVisibility(View.VISIBLE);
                     mSwipeToPaytv.setTextColor(Color.alpha(0));
                     mSwipeToPaytv.setTextColor(getResources().getColor(R.color.davyGrey));
@@ -115,7 +136,7 @@ public class ViewDetailFragment extends Fragment {
 
             @Override
             public void onActionDown() {
-                mImgThumb.setImageResource(R.drawable.icn_slider_darkblue);
+                mImgThumb.setImageResource(R.drawable.fish_slide);
                 mSwipeToPaytv.setTextColor(getResources().getColor(R.color.taupeGrey));
 
             }
@@ -131,9 +152,27 @@ public class ViewDetailFragment extends Fragment {
 
         rotate.setDuration(500);
         rotate.setRepeatCount(Animation.INFINITE);
-        mImgLoader.setAnimation(rotate);
+     //   mImgLoader.setAnimation(rotate);
 
 
+    }
+
+    @Override
+    public void onQuantityChanged(int newQuantity, boolean programmatically) {
+        Toast.makeText(getActivity(), "Quantity: " + newQuantity, Toast.LENGTH_LONG).show();
+ //       ((ViewDetailActivity) getActivity()).mCartCount = newQuantity;
+        ((ViewDetailActivity) getActivity()).setBadgeCount(getActivity(), ((ViewDetailActivity) getActivity()).mCartMenuIcon, String.valueOf(newQuantity));
+      //  sendCartCount();
+    }
+
+    @Override
+    public void onLimitReached() {
+        Logger.e(getClass().getSimpleName(), "Limit reached");
+    }
+
+    public int sendCartCount() {
+
+        return 0;
     }
 }
 

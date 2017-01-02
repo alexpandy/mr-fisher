@@ -40,5 +40,11 @@
     <string name="amount">Amount</string>
     <string name="quantity">Quantity</string>
     <string name="slide_to_pay">SLIDE TO PAY</string>
-    <string name="cart">cart</string>
+    <string name="cart">Cart</string>
+    <string name="frag_tag_cart">cartTag</string>
+    <string name="your_delivery_details">YOUR DELIVERY DETAILS</string>
+    <string name="cart_caps">CART</string>
+    <string name="select_paymnent_method">SELECT PAYMENT METHOD</string>
+    <string name="multiply">X</string>
+    <string name="check_out">CHECK OUT</string>
 </resources>

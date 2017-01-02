@@ -5,7 +5,7 @@
     android:viewportWidth="515.0">
     <path
         android:fillAlpha="0.5"
-        android:fillColor="#D8D8D8"
+        android:fillColor="@color/robinegg_blue"
         android:pathData="M4.5,0L510.5,0A4.5,4.5 0,0 1,515 4.5L515,4.5A4.5,4.5 0,0 1,510.5 9L4.5,9A4.5,4.5 0,0 1,0 4.5L0,4.5A4.5,4.5 0,0 1,4.5 0z"
         android:strokeAlpha="0.5"
         android:strokeColor="#00000000"
