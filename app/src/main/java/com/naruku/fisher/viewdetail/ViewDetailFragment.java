@@ -15,7 +15,11 @@ import android.widget.Toast;
 
 import com.naruku.fisher.Logger;
 import com.naruku.fisher.R;
+import com.naruku.fisher.SessionStorage;
 import com.naruku.fisher.cart.CartActivity;
+import com.naruku.fisher.cart.CartList;
+
+import java.util.ArrayList;
 
 import me.himanshusoni.quantityview.QuantityView;
 
@@ -40,6 +44,11 @@ public class ViewDetailFragment extends Fragment implements QuantityView.OnQuant
     private boolean swiped = false;
     private QuantityView quantitySelector;
     protected int selectedQuantity;
+    private TextView mProductTitle;
+    private String strProductTitle;
+    private TextView mProductAmount;
+    private int iProductCost;
+    private ArrayList<CartList> cartList;
 
     public ViewDetailFragment() {
         // Required empty public constructor
@@ -70,6 +79,8 @@ public class ViewDetailFragment extends Fragment implements QuantityView.OnQuant
         // Inflate the layout for this fragment
         mViewDetail = inflater.inflate(R.layout.fragment_view_detail, container, false);
         mSwipeToPaytv = (TextView) mViewDetail.findViewById(R.id.vd_tvSwipeToPay);
+        mProductTitle = (TextView)mViewDetail.findViewById(R.id.vd_tvTitle);
+        mProductAmount = (TextView)mViewDetail.findViewById(R.id.vd_tvRate);
         mImgLoading = (ImageView) mViewDetail.findViewById(R.id.img_rotate);
         parentSwipeableView = (ViewGroup) mViewDetail.findViewById(R.id.vd_rlSwipeable_view);
         quantitySelector = (QuantityView) mViewDetail.findViewById(R.id.quantity_selector);
@@ -85,6 +96,7 @@ public class ViewDetailFragment extends Fragment implements QuantityView.OnQuant
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         swipeToPay();
+        cartList = new ArrayList<CartList>();
 
         quantitySelector.setQuantityClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +175,17 @@ public class ViewDetailFragment extends Fragment implements QuantityView.OnQuant
  //       ((ViewDetailActivity) getActivity()).mCartCount = newQuantity;
         ((ViewDetailActivity) getActivity()).setBadgeCount(getActivity(), ((ViewDetailActivity) getActivity()).mCartMenuIcon, String.valueOf(newQuantity));
       //  sendCartCount();
+        cartList();
+    }
+
+    private void cartList() {
+        strProductTitle = mProductTitle.getText().toString();
+        iProductCost = 230/*Integer.parseInt(mProductAmount.getText().toString())*/;
+        CartList cartArrayList = new CartList(strProductTitle,"250",iProductCost,"");
+        cartList.add(cartArrayList);
+
+        SessionStorage.getInstance().setCartList(cartList);
+
     }
 
     @Override
@@ -171,7 +194,6 @@ public class ViewDetailFragment extends Fragment implements QuantityView.OnQuant
     }
 
     public int sendCartCount() {
-
         return 0;
     }
 }

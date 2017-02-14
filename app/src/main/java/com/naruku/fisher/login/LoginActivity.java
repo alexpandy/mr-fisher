@@ -11,9 +11,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.naruku.fisher.Logger;
 import com.naruku.fisher.R;
 import com.naruku.fisher.RootActivity;
 import com.naruku.fisher.homescreen.HomeActivity;
+
+import bolts.Continuation;
+import bolts.Task;
 
 public class LoginActivity extends RootActivity implements View.OnClickListener {
 
@@ -111,6 +115,20 @@ public class LoginActivity extends RootActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnSignin:
+               /* LoginController.newInstance(this).doLoginCall().continueWith(new Continuation<Object, Task<Object>>() {
+                    @Override
+                    public Task<Object> then(Task<Object> task) throws Exception {
+
+                        if(task.isFaulted()){
+                            Logger.e("isFaulted","isFaulted");
+                        }else if(!task.isFaulted()){
+                            Logger.e("isNotFaulted","isNotFaulted");
+
+                        }
+                        return null;
+                    }
+                });*/
+                
                 Intent signinIntent = new Intent(this, HomeActivity.class);
                 //  intent.putExtra("Error Desc", errDesc);
                 startActivity(signinIntent);

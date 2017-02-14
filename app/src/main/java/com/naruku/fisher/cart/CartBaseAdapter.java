@@ -69,8 +69,8 @@ public class CartBaseAdapter extends BaseAdapter {
         }
 
         CartList cartListView = (CartList) getItem(position);
-        holder.tvCartTitle.setText(cartListView.product_title);
-        holder.tvCartCost.setText(cartListView.product_count);
+        holder.tvCartTitle.setText(cartListView.getStrItemName());
+        holder.tvCartCost.setText(""+cartListView.getStrAmount());
         return convertView;
     }
 }

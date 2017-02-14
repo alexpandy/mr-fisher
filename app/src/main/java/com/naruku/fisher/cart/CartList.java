@@ -5,13 +5,46 @@ package com.naruku.fisher.cart;
  */
 public class CartList {
 
-    public String product_title="TUNA FISH";
+ /*   public String product_title=;
 
     public String product_count="10";
 
     public int product_value=300;
-/*
-    public String statement_date;
+*/
+    private String strItemName="TUNA FISH";
+    private String strQuantity="10";
+    private int strAmount=300;
 
-    public String statement_type;*/
+    public CartList(String itemName, String quantity, int amount, String itemType) {
+        this.strItemName = itemName;
+        this.strQuantity = quantity;
+        this.strAmount = amount;
+    }
+
+    public String getStrItemName() {
+        return strItemName;
+    }
+
+    public void setStrItemName(String strItemName) {
+        this.strItemName = strItemName;
+
+    }
+
+    public String getStrQuantity() {
+        return strQuantity;
+    }
+
+    public void setStrQuantity(String strQuantity) {
+        this.strQuantity = strQuantity;
+    }
+
+    public int getStrAmount() {
+        return strAmount;
+    }
+
+    public void setStrAmount(int strAmount) {
+        this.strAmount = strAmount;
+
+    }
+
 }
